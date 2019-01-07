@@ -1,0 +1,21 @@
+{
+    "name": "fahada305/yii2-fagrid",
+    "description": "Gridview widget for yii2",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","grid","gridview","widget","table-view",""],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fahad Ali",
+            "email": "fahada305@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "fahada305\\fagrid\\": ""
+        }
+    }
+}
