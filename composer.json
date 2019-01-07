@@ -21,5 +21,7 @@
         "psr-4": {
             "fahada305\\fagrid\\": ""
         }
-    }
+    },
+	 "minimum-stability": "dev",
+    "prefer-stable": true
 }
