@@ -10,7 +10,7 @@ namespace fahada305\fagrid;
 use yii\web\AssetBundle;
 
 class FaGridAsset extends AssetBundle {
-	public $sourcePath = '@vendor/fahada305/yii2-fa-grid-view-widget/assets';
+	public $sourcePath = '@vendor/fahada305/yii2-fagrid/assets';
 
 	public $js = [
 		'grid.min.js',
@@ -22,6 +22,6 @@ class FaGridAsset extends AssetBundle {
 	];
 
 	public $depends = [
-		'yii\jui\JuiAsset',
+		'yii\web\JqueryAsset',
 	];
 }

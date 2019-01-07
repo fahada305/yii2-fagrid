@@ -7,6 +7,7 @@
 
 namespace fahada305\fagrid;
 
+use Yii;
 use yii\base\InvalidConfigException;
 
 class FaGrid extends \yii\bootstrap\Widget {
@@ -15,7 +16,7 @@ class FaGrid extends \yii\bootstrap\Widget {
 	public $deletUrl;
 	public $editPageUrl;
 	//public $fields = [];
-	public $columns = [];
+	public $columns;
 
 	public function init() {
 		parent::init();
@@ -23,6 +24,7 @@ class FaGrid extends \yii\bootstrap\Widget {
 	}
 
 	public function run() {
+		$this->registerWidget();
 
 		$ctrlurls = $this->makeUrl();
 		$fields = $this->makeFields();
@@ -50,9 +52,20 @@ class FaGrid extends \yii\bootstrap\Widget {
 
 				$fields .= "{";
 
-				$fields .= " name: " . $field['name'];
-				$fields .= "title:" . (in_array('label', $field)) ? $field['label'] : ucfirst($field['name']);
-				$fields .= "width:" . (in_array('width', $field)) ? $field['width'] : $a_width;
+				$fields .= " name: '" . $field['name'] . "',";
+
+				if (isset($field['label'])) {
+					$fields .= "title: '" . $field['label'] . "',";
+				} else {
+					$fields .= "title: '" . ucfirst($field['name']) . "',";
+				}
+				if (isset($field['width'])) {
+					$fields .= "width: '" . $field['width'] . "',";
+				} else {
+					$fields .= "width: '" . $a_width . "',";
+				}
+				//$fields .= "title:" . isset($field['label']) ? $field['label'] : ucfirst($field['name']);
+				//$fields .= "width:" . isset($field['width']) ? $field['width'] : $a_width;
 
 				$fields .= "},";
 
@@ -62,5 +75,11 @@ class FaGrid extends \yii\bootstrap\Widget {
 		} else {
 			throw new InvalidConfigException("columns array must have atleast one value");
 		}
+	}
+
+	protected function registerWidget() {
+		$view = $this->getView();
+		// $view->registerJs("jQuery('#{$this->options['id']}').SortableGridView('{$this->sortableAction}');");
+		FaGridAsset::register($view);
 	}
 }
