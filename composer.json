@@ -1,8 +1,8 @@
 {
     "name": "fahada305/yii2-fagrid",
-    "description": "Gridview widget for yii2",
+    "description": "FaGrid jQuery based table grid view",
     "type": "yii2-extension",
-    "keywords": ["yii2","extension","grid","gridview","widget","table-view",""],
+    "keywords": ["yii2","extension"],
     "license": "MIT",
     "authors": [
         {

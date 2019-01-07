@@ -1,6 +1,6 @@
-fagrid Yii2 GridView widget 
-============================
-Gridview widget for yii2
+FaGrid GridView
+===============
+FaGrid jQuery based table grid view
 
 Installation
 ------------
@@ -28,4 +28,4 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \fahada305\fagrid\FaGrid::widget(); ?>```
+<?= \fahada305\fagrid\AutoloadExample::widget(); ?>```
