@@ -34,8 +34,7 @@ in your Controller add new function for getting data
 public function actionData() {
 
 		$model = Category::find()->asArray()->all();
-		//print_r($data);
-
+		
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		return $model;
 	}
