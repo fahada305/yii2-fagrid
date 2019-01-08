@@ -27,9 +27,13 @@ Usage
 
 Once the extension is installed, simply use it in your code by  :
 
-in your Controller add new function for getting data 
+in your Controller create  function for getting data 
+make sure resposne format must be `json` and query must `asArray`
 
 ```php
+namespace app\controllers;
+..........
+.........
 
 public function actionData() {
 
@@ -38,11 +42,14 @@ public function actionData() {
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		return $model;
 	}
+........
+........
+.......
 ```
 In Your View file 
 
 ```php
-$dataUrl = "category/data"; 
+$dataUrl = "category/data";  // "controller->id/action->id or "module->id/controller->id/action->id"
 
 $columns = [
 	['name' => 'name'],
