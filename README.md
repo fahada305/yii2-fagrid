@@ -28,4 +28,4 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \fahada305\fagrid\FaGrid::widget([$columns]); ?>```
+<?=\fahada305\fagrid\FaGrid::widget(['columns' => $columns, 'dataUrl' => $dataUrl]);?>```
