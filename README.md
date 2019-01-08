@@ -37,15 +37,14 @@ in your Controller add new function for getting data
 
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		return $model;
-	}
-	```
+	}```
+	
+	
 	
 dataUrl is something like this
 
 ```php 
-$dataUrl = "category/data";
-
-```
+$dataUrl = "category/data";```
 
 columns must be an array of columns that need to display at table 
 
@@ -54,9 +53,7 @@ $columns = [
 	['name' => 'name'],
 	['name' => 'type'],
 	['name' => 'description'],
-	];
-	
-	````
+	];````
 	
 And Finally use below code where you want to show table grid
 
